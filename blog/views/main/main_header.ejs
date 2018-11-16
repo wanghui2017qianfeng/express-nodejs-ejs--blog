@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EXPRESS</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap-theme.min.css">
+    <script src = "../../js/jquery-1.12.4.min.js"></script>
+    <script src = "../../js/bootstrap.min.js"></script>
+    <script src="../../js/index.js"></script>
+</head>
+<body>
+        <header>
+            <div class="backimg"><img src="../../images/IMG_0293.JPG"></div>
+            <div class="logo"><span></span><img src="../../images/00002637.png"></div>
+        </header>
+    
+       
+    
+<nav>
+    <div class="menu">
+
+        <% if (category == ""){ %>
+        <a href="/" class="focus">首页</a>
+        <% }else{ %>
+        <a href="/">首页</a>
+        <% } %>
+            <% categories.forEach(function(cate){ %>
+                <% if( cate._id.toString() == category){ %>
+                        <a class="focus" href="/?categoryid=<%=cate._id.toString()%>"><%=cate.name%></a>
+                <% }else{ %>
+                        <a href="/?categoryid=<%=cate._id.toString()%>"><%=cate.name%></a>
+                <% } %>
+            <% }) %>
+    </div>
+</nav>
+
+
+
+<main class="clear">
+    <div class="mainLeft">
